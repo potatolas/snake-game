@@ -29,12 +29,6 @@ export default defineConfig(({ mode }) => {
               vue: 'Vue',
             },
           },
-          assetFileNames: (assetInfo: any) => {
-            if (assetInfo.name && assetInfo.name.endsWith('.css')) {
-              return 'snake-game.css';
-            }
-            return assetInfo.name || '[name][extname]';
-          },
         },
       }
       : {
