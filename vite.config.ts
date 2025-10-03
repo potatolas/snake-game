@@ -9,15 +9,37 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // https://vite.dev/config/
-export default defineConfig({
-  build: {
-    emptyOutDir: true
-  },
-  plugins: [vue(), tailwindcss()],
-  resolve: {
-    alias: {
-      '@snake': path.resolve(__dirname, 'src'),
-      // '@': fileURLToPath(new URL('./src', import.meta.url)),
+export default defineConfig(({ mode }) => {
+  const isLib = mode === 'lib';
+
+  return {
+    build: isLib
+      ? {
+        lib: {
+          entry: path.resolve(__dirname, 'src/lib.ts'),
+          name: 'SnakeGame',
+          fileName: (format) => `snake-game.${format}.js`,
+          formats: ['es', 'umd'],
+        },
+        outDir: 'dist-lib',
+        rollupOptions: {
+          external: ['vue'],
+          output: {
+            globals: {
+              vue: 'Vue',
+            },
+          },
+        },
+      }
+      : {
+        outDir: 'dist',
+      },
+    plugins: [vue(), tailwindcss()],
+    resolve: {
+      alias: {
+        '@snake': path.resolve(__dirname, 'src'),
+        // '@': fileURLToPath(new URL('./src', import.meta.url)),
+      },
     },
-  },
+  }
 })
