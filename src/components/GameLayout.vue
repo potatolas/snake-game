@@ -11,7 +11,9 @@
 
         <GameDpad></GameDpad>
 
-        <SettingsPanel></SettingsPanel>
+        <SettingsPanel>
+            <slot name="settings"></slot>
+        </SettingsPanel>
     </section>
 </template>
 
