@@ -22,16 +22,16 @@ function getCellClass(r: number, c: number) {
         res.push('border-accent')
         switch (game.value.snake.direction) {
             case Direction.Up:
-                res.push('border-t-2')
+                res.push('border-t-4')
                 break;
             case Direction.Down:
-                res.push('border-b-2')
+                res.push('border-b-4')
                 break;
             case Direction.Left:
-                res.push('border-l-2')
+                res.push('border-l-4')
                 break;
             case Direction.Right:
-                res.push('border-r-2')
+                res.push('border-r-4')
                 break;
         }
     }

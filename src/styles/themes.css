@@ -32,4 +32,13 @@
     --color-base: #d28686;
     --color-wall: #471503;
   }
+
+  [data-theme="greyscale"]{
+    --color-secondary: #574c3b;   
+    --color-primary: #949393;
+    --color-primary-dark: #717171;
+    --color-accent: #9c7b49;
+    --color-base: #efefef;
+    --color-wall: #303030;
+  }
 }

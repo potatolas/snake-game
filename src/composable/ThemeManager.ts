@@ -3,7 +3,8 @@ import { ref } from "vue"
 
 export const THEMES = {
     'DEFAULT': 'default',
-    'ORANGE': 'orange'
+    'ORANGE': 'orange',
+    'GREYSCALE': 'greyscale'
 } as const
 
 
