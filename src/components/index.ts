@@ -1,6 +1,6 @@
 // src/components/index.ts
 import GameLayout from './GameLayout.vue'
-import '@snake/styles/game.css'
+import '@snake/styles/themes.css'
 
 export { GameLayout };
 export default {

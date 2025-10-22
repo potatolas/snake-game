@@ -37,3 +37,13 @@ onUnmounted(() => {
     window.removeEventListener('keydown', debounceHandleKeyDown)
 })
 </script>
+
+<style scoped>
+@reference '../styles/style.css';
+@reference '../styles/themes.css';
+
+.game-control-button {
+    @apply bg-primary-dark hover:bg-primary hover:text-wall rounded p-1 disabled:pointer-events-none disabled:opacity-60 border-wall border cursor-pointer;
+}
+
+</style>

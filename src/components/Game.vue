@@ -19,7 +19,7 @@ function getCellClass(r: number, c: number) {
     const cellType = game.value.grid.getCellType(r, c)
     const res: string[] = []
     if (snakeHead.value.x === c && snakeHead.value.y === r) {
-        res.push('border-blue-800')
+        res.push('border-accent')
         switch (game.value.snake.direction) {
             case Direction.Up:
                 res.push('border-t-2')
@@ -37,13 +37,13 @@ function getCellClass(r: number, c: number) {
     }
     switch (cellType) {
         case CELL_TYPE.EMPTY:
-            return [...res, "bg-blue-50"]
+            return [...res, "bg-base"]
         case CELL_TYPE.SNAKE:
-            return [...res, "bg-blue-400"]
+            return [...res, "bg-primary"]
         case CELL_TYPE.WALL:
-            return [...res, "bg-gray-800"]
+            return [...res, "bg-wall"]
         case CELL_TYPE.ITEM:
-            return [...res, "bg-pink-300"]
+            return [...res, "bg-secondary"]
     }
 }
 </script>

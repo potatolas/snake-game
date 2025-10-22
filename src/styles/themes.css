@@ -1,0 +1,35 @@
+/* themes.css */
+@import "tailwindcss";
+
+.color-transition-parent * {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+@theme {
+  --color-secondary: oklch(71.8% 0.202 349.761);   
+  --color-primary: oklch(74.6% 0.16 232.661);
+  --color-primary-dark: oklch(39.1% 0.09 240.876);
+  --color-accent: oklch(45.7% 0.24 277.023);
+  --color-base: oklch(98.5% 0.001 106.423);
+  --color-wall: oklch(29.3% 0.066 243.157);
+}
+
+@layer base {
+  [data-theme="default"] {
+    --color-secondary: oklch(71.8% 0.202 349.761);   
+    --color-primary: oklch(74.6% 0.16 232.661);
+    --color-primary-dark: oklch(39.1% 0.09 240.876);
+    --color-accent: oklch(45.7% 0.24 277.023);
+    --color-base: oklch(94.8% 0.028 342.258);
+    --color-wall: oklch(29.3% 0.066 243.157);
+  }
+
+  [data-theme="orange"] {
+    --color-secondary: #77216F;   
+    --color-primary: #E95420;
+    --color-primary-dark: #852807;
+    --color-accent: #2C001E;
+    --color-base: #d28686;
+    --color-wall: #471503;
+  }
+}
