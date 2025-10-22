@@ -18,6 +18,6 @@ import { GAME_STATE } from '@snake/models/model';
 @reference '../styles/themes.css';
 
 .game-button {
-    @apply bg-primary-dark hover:bg-primary hover:text-wall rounded p-1 disabled:pointer-events-none disabled:opacity-50 cursor-pointer;
+    @apply bg-primary-dark hover:bg-primary hover:text-wall rounded p-1 disabled:pointer-events-none disabled:opacity-50 cursor-pointer text-white;
 }
 </style>
