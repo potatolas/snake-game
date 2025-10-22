@@ -45,7 +45,7 @@ import { INITIAL_SLIDER_VALUE, MIN_SLIDER_VALUE, MAX_SLIDER_VALUE, INIT_COLS } f
 import themeManager, { THEMES, type Theme } from '@snake/composable/ThemeManager'
 
 const { changeConfig } = useGameManager();
-const { changeTheme } = themeManager();
+const { changeTheme, selectedTheme } = themeManager();
 
 const showSettings = ref(false)
 
@@ -66,8 +66,6 @@ function saveSettings() {
     changeTheme(selectedTheme.value)
 }
 
-
-const selectedTheme = ref<Theme>(THEMES.DEFAULT)
 
 function chooseTheme(t: Theme) {
     selectedTheme.value = t
