@@ -40,10 +40,20 @@ export default defineConfig(({ mode }) => {
       : {
         outDir: 'dist',
       },
-    plugins: [vue(), tailwindcss(), dts({
-      insertTypesEntry: true, // generates index.d.ts in dist
-      outDir: 'dist-lib'
-    })],
+    plugins: [
+      vue(), 
+      tailwindcss(), 
+      isLib && dts({
+        insertTypesEntry: true,
+        outDir: 'dist-lib',
+        tsconfigPath: './tsconfig.app.json',
+        include: ['src/lib.ts', 'src/components/**/*', 'src/composable/**/*', 'src/models/**/*', 'src/utils/**/*'],
+        exclude: ['src/main.ts', 'src/**/*.spec.ts', 'src/**/*.test.ts', 'node_modules/**'],
+        copyDtsFiles: true,
+        staticImport: true,
+        rollupTypes: true, // This will bundle all types into a single file
+      })
+    ].filter(Boolean),
     resolve: {
       alias: {
         '@snake': path.resolve(__dirname, 'src'),

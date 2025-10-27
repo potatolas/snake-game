@@ -28,7 +28,12 @@
     "vue-tsc": "^2.2.12"
   },
   "exports": {
-    ".": "./dist-lib/snake-game.es.js",
+    ".": {
+      "types": "./dist-lib/snake-game.es.d.ts",
+      "import": "./dist-lib/snake-game.es.js",
+      "require": "./dist-lib/snake-game.umd.js"
+    },
     "./snake-game.css": "./dist-lib/snake-game.css"
-  }
+  },
+  "types": "./dist-lib/snake-game.es.d.ts"
 }
