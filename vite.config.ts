@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path';
 import { fileURLToPath } from 'url';
-
+import dts from 'vite-plugin-dts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -40,7 +40,10 @@ export default defineConfig(({ mode }) => {
       : {
         outDir: 'dist',
       },
-    plugins: [vue(), tailwindcss()],
+    plugins: [vue(), tailwindcss(), dts({
+      insertTypesEntry: true, // generates index.d.ts in dist
+      outDir: 'dist-lib'
+    })],
     resolve: {
       alias: {
         '@snake': path.resolve(__dirname, 'src'),

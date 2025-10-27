@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "build:lib": "vite build --mode lib" ,
+    "build:lib": "vite build --mode lib",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -21,8 +21,10 @@
     "@types/node": "^24.0.14",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/tsconfig": "^0.7.0",
+    "tsup": "^8.5.0",
     "typescript": "~5.8.3",
-    "vite": "^7.0.4",
+    "vite": "^7.1.12",
+    "vite-plugin-dts": "^4.5.4",
     "vue-tsc": "^2.2.12"
   },
   "exports": {
